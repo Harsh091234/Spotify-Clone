@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+</head>
+
+<body id="body " class="p-0 m-0 bg-stone-950 ">
+    <nav class="sticky z-100 top-0">
+        <div class="flex bg-black h-12 items-center  w-full">
+            <div class="flex items-center bg-white ml-3 flex-shrink-0">
+                <img src="Images/logo.png" class="cursor-pointer h-8" title="Spotify" alt="">
+
+            </div>
+            <!-- right nav icons -->
+            <div class="flex items-center space-x-2 ml-auto   h-10 w-fit">
+                <div id="search" class=" text-white flex items-center justify-center
+                rounded-3xl h-8 w-8 text-2xl  transition-colors duration-200 active:text-gray-300">
+                    <ion-icon class="cursor-pointer" name="search-outline"></ion-icon>
+                </div>
+                <div class="h-full w-[88px] flex items-center justify-center">
+                    <button class=" cursor-pointer text-black bg-white text-xs py-1 px-7 rounded-3xl font-bold tracking-wide 
+                        active:bg-gray-300 active:scale-95 transition-transform duration-200 ">
+                        Open <br> App
+                    </button>
+                </div>
+
+
+
+
+                <div id="threeDotIcon" onclick="SlideLeft()"    class=" text-white flex items-center justify-center
+                 rounded-3xl h-9 w-9  text-3xl active:text-gray-300 transition-colors duration-200">
+                    <ion-icon  class="cursor-pointer" name="menu-outline"></ion-icon>
+                </div>
+            </div>
+
+            <!-- three dot menu -->
+            <div id="threeDotMenu" class="transition-all duration-200 absolute  min-h-svh  w-full bg-black text-white top-0 left-[90rem] font-semibold ">
+                <ul class="ml-10 text-xl mt-15
+                ">
+                    <li class="mb-3.5 active:text-stone-500 transition-colors"><a href="">Log in</a></li>
+                    <li class="active:text-stone-500 transition-colors"><a href="">Sign up</a></li>
+                </ul>
+                <ul class="ml-10 text-4xl mb-7">
+                    <li>_</li>
+                </ul>
+                <ul class="ml-10 text-">
+                    <li class="mb-1 relative active:left-0.5 transition-colors  active:text-stone-500"><a href="">Premium</a></li>
+                    <li class="mb-1 active:text-stone-500 active:left-0.5 relative transition-colors"><a href="">Help</a></li>
+                    <li class="mb-1 active:text-stone-500 active:left-0.5 relative transition-colors"><a href="">Download</a></li>
+                    <li class="mb-1 active:text-stone-500 active:left-0.5 relative transition-colors"><a href="">Privacy</a></li>
+                    <li class="mb-1 active:text-stone-500 active:left-0.5 relative transition-colors"><a href="">Terms</a></li>
+                </ul>
+                <span onclick="SlideRight()" class="text-2xl font-thin cursor-pointer top-5 right-10 absolute">&#10005</span>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="lowerContent" class=" w-full">
+        <!-- lower 1 -->
+        <div id=" lw1" class="mt-4">
+            <h1 class=" ml-4 mb-0.5    text-white font-bold text-lg tracking-wide">Popular artists</h1>
+
+            <div id="wrapper" class="flex overflow-x-auto">
+                <div class="flex-shrink-0 p-2 rounded-lg ml-2 active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/pritam.jpg" alt="Pritam">
+                    <h5 class="text-white font-normal text-sm tracking-wide p-0.5 pt-1.5">Pritam</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/arijit singh.jpg" alt="Arijit Singh">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Arijit Singh</h5>
+                </div>
+                <div class="flex-shrink-0  p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg  h-40" src="Images/singers/ar rahman.jpg" alt="A,R. Rahman">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">A.R. Rahman</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/sachin jigar.jpg" alt="Sachin-Jigar">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 ">Sachin-Jigar</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/vishal shekhar.jpg" alt="Vishal-Shekhar">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Vishal-Shekhar</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/atif aslam.jpg" alt="Atif Aslam">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Atif Aslam</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/anirudh ravichander.jpg" alt="Anirudh Ravichander">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Anirudh Ravichander</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/jasleen royal.jpg" alt="Jasleen Royal">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Jasleen Royal</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/vishal mishra.jpg" alt="Vishal Mishra">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Vishal Mishra</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/singers/honey singh.jpg" alt="Yo Yo Honey Singh">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Yo Yo Honey Singh</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- lower 2 -->
+        <div id=" lw2" class="mt-4">
+            <h1 class=" ml-4 mb-0.5    text-white font-bold text-lg tracking-wide">Popular albums and singles</h1>
+
+            <div id="wrapper" class="flex overflow-x-auto">
+                <div class="flex-shrink-0 p-2 rounded-lg ml-2 active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/glory.jpg" alt="Glory">
+                    <h5 class="text-white font-normal text-sm tracking-wide p-0.5 pt-1.5">Glory</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/aashiqi 2.jpg" alt="Aashiqui 2">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Aashiqui 2</h5>
+                </div>
+                <div class="flex-shrink-0  p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg  h-40" src="Images/albums/yeh javani h deewani.jpg"
+                        alt="Yeh Jawaani Hai Deewaani">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5  max-w-40 ">Yeh Jawaani Hai
+                        Deewaani</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/who remixes.jpg" alt="Who (Remixes)">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 ">Who (Remixes)</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/mismatched.jpg"
+                        alt="Mismatched: Season 3 (Soundtrack from)">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 max-w-40">Mismatched: Season 3
+                        (Soundtrack from the....</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/making memories.jpg" alt="Making Memories">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Making Memories</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/sahiba.jpg" alt="Sahiba">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Sahiba</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/jo tum mere ho.jpg" alt="Jo Tum Mere Ho">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Jo Tum Mere Ho</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/love songs arijit singh.jpg" alt="Vishal Mishra">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 max-w-40">Ultimate Love Songs
+                        <br> - Arijit Singh
+                    </h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/albums/sanam teri kasam.jpg" alt="Sanam Teri Kasam">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 max-w-40">Sanam Teri Kasam
+                        (Original Motion Pictu...</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- lower 3 -->
+        <div id=" lw2" class="mt-4">
+            <h1 class=" ml-4 mb-0.5    text-white font-bold text-lg tracking-wide">Popular radio</h1>
+
+            <div id="wrapper" class="flex overflow-x-auto">
+                <div class="flex-shrink-0 p-2 rounded-lg ml-2 active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/arijit singh.jpg" alt="Arijit Singh Radio">
+                    <h5 class="text-white font-normal text-sm tracking-wide p-0.5 pt-1.5">Arijit Singh Radio</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/kk.jpg" alt="KK Radio">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">KK Radio</h5>
+                </div>
+                <div class="flex-shrink-0  p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg  h-40" src="Images/popular audio/shreya.jpg" alt="Shreya Ghoshal Radio">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5  max-w-40 ">Shreya Ghoshal
+                        <br> Radio
+                    </h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/diljit dosanjh.jpg"
+                        alt="Diljit Dosanjh Radio">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 ">Diljit Dosanjh Radio</h5>
+                </div>
+                <div class="flex-shrink-0 p-2 text-white   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/sidhu moosewala.jpg" alt="SMW Radio">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 max-w-40">Sidhu Moose Wala
+                        Radio</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/kumar sanu.jpg">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Kumar Sanu Radio</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/ar rahman.jpg">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">A.R. Rahman</h5>
+                </div>
+                <div class="flex-shrink-0 p-2  rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/honey singh.jpg">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5">Yo Yo Honey Singh</h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/atif aslam.jpg">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 max-w-40">Atif Aslam Radio
+                    </h5>
+                </div>
+                <div class="flex-shrink-0 p-2   rounded-lg active:bg-stone-900 cursor-pointer"><img
+                        class="rounded-lg h-40" src="Images/popular audio/udit narayan.jpg">
+                    <h5 class="text-white font-normal text-sm tracking-wide  p-0.5 pt-1.5 max-w-40">Udit Narayan</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- lower links 1 -->
+        <div class="mt-4">
+            <h1 class=" ml-4 mb-0.5  py-0.5  text-white font-bold text-sm tracking-wide">Company</h1>
+            <div class="flex flex-col">
+                <a href="#"
+                    class="active:text-white active:underline text-stone-500   py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">About</a>
+                <a href="#"
+                    class="active:text-white active:underline text-stone-500  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">Jobs</a>
+                <a href="#"
+                    class="active:text-white active:underline text-stone-500 py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">Company</a>
+            </div>
+
+        </div>
+
+        <!-- lower links 2 -->
+        <div class="mt-4">
+            <h1 class=" ml-4 mb-0.5  py-0.5  text-white font-bold text-sm tracking-wide">Communities</h1>
+            <div class="flex flex-col">
+                <a href="#"
+                    class="text-stone-500   active:text-white active:underline  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">For
+                    Artists</a>
+                <a href="#"
+                    class="text-stone-500  active:text-white active:underline  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">
+                    Developers</a>
+                <a href="#"
+                    class="text-stone-500 active:text-white active:underline  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">Advertising</a>
+                <a href="#"
+                    class="text-stone-500  active:text-white active:underline  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">Investors</a>
+                <a href="#"
+                    class="text-stone-500 active:text-white active:underline py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">Vendors</a>
+            </div>
+
+        </div>
+
+        <!-- lower links 3 -->
+        <div class="mt-4">
+            <h1 class=" ml-4 mb-0.5  py-0.5  text-white font-bold text-sm tracking-wide">Useful links</h1>
+            <div class="flex flex-col">
+                <a href="#"
+                    class="text-stone-500 active:text-white active:underline  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">For
+                    Support</a>
+                <a href="#"
+                    class="text-stone-500 active:text-white active:underline py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">
+                    Free Mobile App</a>
+
+            </div>
+
+        </div>
+
+        <!-- lower links 4 -->
+        <div class="mt-4">
+            <h1 class=" ml-4 mb-0.5  py-0.5  text-white font-bold text-sm tracking-wide">Spotify Plans</h1>
+            <div class="flex flex-col">
+                <a href="#"
+                    class="text-stone-500  active:text-white active:underline py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">Premium
+                    Individual</a>
+                <a href="#"
+                    class="text-stone-500  active:text-white active:underline py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">
+                    Premium Duo </a>
+                <a href="#"
+                    class="text-stone-500  active:text-white active:underline py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">
+                    Premium Family </a>
+                <a href="#"
+                    class="text-stone-500 active:text-white active:underline  py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">
+                    Premium Student </a>
+                <a href="#"
+                    class="text-stone-500  active:text-white active:underline py-0.5 ml-4 mb-0.5 text-xs font-semibold tracking-normal ">
+                    Spotify Free </a>
+
+            </div>
+
+        </div>
+
+        <!-- lower icons -->
+        <div class="ml-4 mt-4 flex space-x-1.5">
+            <div class="active:bg-stone-500 bg-stone-800 w-8 h-8 rounded-full flex  items-center justify-center ">
+                <a href="" class="text-white translate-y-0.5"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+            <div class="active:bg-stone-500 bg-stone-800 w-8 h-8 rounded-full flex  items-center justify-center">
+                <a href="" class="text-white translate-y-0.5"><ion-icon name="logo-twitter"
+                        class="text-white"></ion-icon></a>
+            </div>
+            <div class="active:bg-stone-500 bg-stone-800 w-8 h-8 rounded-full flex  items-center justify-center">
+                <a href="" class="text-white translate-y-0.5"><ion-icon name="logo-facebook"></ion-icon></a>
+            </div>
+
+
+
+        </div>
+
+        <hr class="mt-4 mb-4 text-stone-700 ml-4">
+        <div class="flex space-x-5 ml-4  flex-wrap">
+            <a href="" class="active:text-white  text-stone-500 text-xs font-semibold tracking-normal mt-1">Legal</a>
+            <a href="" class="active:text-white  text-stone-500 text-xs font-semibold tracking-normal mt-1">Safety & Privacy Center</a>
+            <a href="" class="active:text-white  text-stone-500 text-xs font-semibold tracking-normal mt-1">Privacy Policy</a>
+            <a href="" class=" active:text-white text-stone-500 text-xs font-semibold tracking-normal mt-1">Cookies</a>
+            <a href="" class=" active:text-white text-stone-500 text-xs font-semibold tracking-normal mt-1">About Ads</a>
+            <a href="" class="active:text-white  text-stone-500 text-xs font-semibold tracking-normal mt-1">Accessibility</a>
+
+
+
+
+        </div>
+        <div class="text-stone-500 font-medium text-sm mt-1 ml-4 leading-tight"> &#169; 2025 Spotify <br>
+            AB</div>
+
+    </div>
+
+   
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    
+
+</body>
+
+</html>

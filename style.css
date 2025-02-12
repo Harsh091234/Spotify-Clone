@@ -1,0 +1,13 @@
+#wrapper::-webkit-scrollbar{
+
+ 
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
+}
+
+/* #threeDotMenu{
+    left: 0rem;
+} */
