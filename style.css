@@ -3,6 +3,9 @@
  
     display: none;
 }
+body{
+ overflow-x : hidden;
+}
 
 ::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
